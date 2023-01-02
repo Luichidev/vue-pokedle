@@ -1,20 +1,15 @@
 <script setup>
   defineProps({
     letter: {
-      type: String,
-      default: '',
-      required: true,
+      type: Object,
+      default: { name: '', color: 'transparent'},
     },
-    color: {
-      type: String,
-      default: 'transparent',
-    }
   })
 </script>
 
 <template>
-  <div class="letter" :class='[`bg--${color}`]'>
-    {{ letter }}
+  <div class="letter" :class='[`bg--${letter.color}`]'>
+    {{ letter.name }}
   </div>
 </template>
 
