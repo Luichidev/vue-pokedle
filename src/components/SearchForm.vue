@@ -11,7 +11,7 @@ const props = defineProps({
 const userWord = ref('')
 const emit = defineEmits(['user:word'])
 
-const canSend = computed(() => userWord.value.length === props.long)
+const canSend = computed(() => userWord.value.length === props.long && !userWord.value.includes(' '))
 
 const handleClickOnSubmit = () => {
   emit('user:word', userWord.value.toLowerCase())
