@@ -34,8 +34,6 @@ watch(userWord, () => {
     </div>
   </div>
   <div v-else>
-    <div v-for="userWord in arrayUserWord" :key='userWord'>
-      <SingleWord :word='word' :user-word='userWord' />
-    </div>
+      <SingleWord v-for="userWord in arrayUserWord" :key='userWord' :word='word' :user-word='userWord' />
   </div>
 </template>

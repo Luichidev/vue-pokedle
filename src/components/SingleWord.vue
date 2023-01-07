@@ -19,11 +19,22 @@
     const arrayWord = props.word.split("")
     const arrayUserWord = props.userWord.split("")
 
-    return arrayUserWord.map(((letter, i) => {
-      if (letter === arrayWord[i]) return { name: letter, color: 'green'}
-      else if (arrayWord.includes(letter)) return {name: letter, color: 'gold'}
-      else return { name: letter, color: 'grey'}
-    }))
+    let result = arrayUserWord.map((letter, i) => {
+      if (letter === arrayWord[i]) {
+        arrayWord[i] = ' '
+        return { name: letter, color: 'green' }
+      }
+    })
+    
+    arrayUserWord.forEach((letter, i) => {
+      if (arrayWord.includes(letter)) {
+        result[i] = { name: letter, color: 'gold' }
+      } else if(arrayWord[i] !== ' '){
+        result[i] = { name: letter, color: 'grey' }
+      }
+    })
+    
+    return result
   })
 </script>
 
@@ -36,5 +47,7 @@
 <style scoped>
   .word {
     display: flex;
+    gap: 8px;
+    margin-block-end: 8px;
   }
 </style>
