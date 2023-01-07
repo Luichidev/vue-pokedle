@@ -15,9 +15,10 @@
 
 <style scoped>
 .letter {
-    width: 8rem;
-    height: 8rem;
-    border: 1px solid black;
+    width: 9rem;
+    height: 9rem;
+    border: 1px solid #dadada;
+    border-radius: 4px;
     font-weight: bold;
     font-size: 6rem;
     padding: 2rem;
